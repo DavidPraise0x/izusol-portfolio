@@ -1,26 +1,26 @@
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { 
-  ExternalLink, 
-  Mail, 
-  MapPin, 
-  Copy, 
-  Check, 
-  Menu, 
-  X, 
-  ChevronRight, 
-  Database, 
-  Code, 
-  Cpu, 
+import {
+  ExternalLink,
+  Mail,
+  MapPin,
+  Copy,
+  Check,
+  Menu,
+  X,
+  ChevronRight,
+  Database,
+  Code,
+  Cpu,
   TrendingUp
 } from 'lucide-react';
 
 const GithubIcon = ({ className, size = 20 }: { className?: string; size?: number }) => (
-  <svg 
-    className={className} 
-    width={size} 
-    height={size} 
-    viewBox="0 0 24 24" 
+  <svg
+    className={className}
+    width={size}
+    height={size}
+    viewBox="0 0 24 24"
     fill="currentColor"
   >
     <path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" />
@@ -32,7 +32,7 @@ interface Project {
   id: number;
   title: string;
   desc: string;
-  category: 'AI / ML & Data Science';
+  category: 'Data Science';
   stack: string[];
   codeUrl: string;
   demoUrl?: string;
@@ -43,63 +43,23 @@ interface Project {
 const PROJECTS_DATA: Project[] = [
   {
     id: 1,
-    title: 'Sentiment Analysis Engine',
-    desc: 'NLP-powered sentiment classification system using transformer models for real-time social media analysis and brand monitoring.',
-    category: 'AI / ML & Data Science',
-    stack: ['Python', 'PyTorch', 'HuggingFace', 'FastAPI'],
-    codeUrl: 'https://github.com/DavidPraise0x/Sentiment-Analysis-Engine',
+    title: 'E-commerce Customer Segmentation and Value Analysis',
+    desc: 'This project applies RFM (Recency, Frequency, Monetary) analysis to segment an e-commerce customer base and uncover key behavioral patterns. The goal is to identify high-value, at-risk, and lost customers, enabling more targeted marketing, improved retention strategies, and smarter use of marketing',
+    category: 'Data Science',
+    stack: ['Python', 'Pandas', 'Scikit-learn', 'Matplotlib', 'Seaborn'],
+    codeUrl: 'https://github.com/izusol/-E-commerce-Customer-Segmentation-and-Value-Analysis-RFM-',
     gradient: 'linear-gradient(135deg, #6366f1 0%, #a855f7 100%)',
     imageUrl: '/sentiment_analysis.png'
   },
   {
     id: 2,
-    title: 'Mental Health Chatbot',
-    desc: 'An AI chatbot trained to provide emotional support resources and mental health guidance using Natural Language Processing (NLP).',
-    category: 'AI / ML & Data Science',
-    stack: ['Python', 'NLP', 'PyTorch', 'Jupyter'],
-    codeUrl: 'https://github.com/DavidPraise0x/Mental-Health-Chatbot',
+    title: 'Nigerian Electricity Demand Forecaster',
+    desc: 'This project focuses on forecasting hourly electricity demand based on historical consumption data from commercial and industrial sites across Nigeria.',
+    category: 'Data Science',
+    stack: ['Python', 'Statsmodels', 'Scikit-learn', 'Matplotlib', 'Seaborn'],
+    codeUrl: 'https://github.com/izusol/NG-Electricity-Demand-Forecast',
     gradient: 'linear-gradient(135deg, #10b981 0%, #059669 100%)',
     imageUrl: '/mental_health_chatbot.png'
-  },
-  {
-    id: 3,
-    title: 'Customer Churn Prediction',
-    desc: 'Supervised machine learning model built to forecast customer churn in a telecommunications enterprise using analytical pipelines and models.',
-    category: 'AI / ML & Data Science',
-    stack: ['Python', 'Scikit-learn', 'Pandas', 'Jupyter'],
-    codeUrl: 'https://github.com/DavidPraise0x/Customer-Churn-Prediction',
-    gradient: 'linear-gradient(135deg, #f59e0b 0%, #d97706 100%)',
-    imageUrl: '/data_analytics.png'
-  },
-  {
-    id: 4,
-    title: 'House Price Prediction App',
-    desc: 'An interactive analytical dashboard engineered with Streamlit and Scikit-learn for mapping and predicting real estate valuations.',
-    category: 'AI / ML & Data Science',
-    stack: ['Python', 'Streamlit', 'Scikit-learn', 'Plotly'],
-    codeUrl: 'https://github.com/DavidPraise0x/House-Price-Prediction-App',
-    gradient: 'linear-gradient(135deg, #ec4899 0%, #db2777 100%)',
-    imageUrl: '/house_prediction.png'
-  },
-  {
-    id: 5,
-    title: 'SMS Spam Detection Model',
-    desc: 'A robust text categorization machine learning model built using Natural Language Processing (NLP) to detect and isolate spam.',
-    category: 'AI / ML & Data Science',
-    stack: ['Python', 'NLP', 'Scikit-learn', 'NLTK'],
-    codeUrl: 'https://github.com/DavidPraise0x/SMS-Spam-Detection-Model',
-    gradient: 'linear-gradient(135deg, #06b6d4 0%, #0891b2 100%)',
-    imageUrl: '/sms_spam.png'
-  },
-  {
-    id: 6,
-    title: 'Image Classification API',
-    desc: 'Deep learning classification API driven by custom CNN models, packaged in Docker containers and hosted on AWS infrastructure.',
-    category: 'AI / ML & Data Science',
-    stack: ['Python', 'TensorFlow', 'Flask', 'Docker', 'AWS'],
-    codeUrl: 'https://github.com/DavidPraise0x/Image-Classification-API',
-    gradient: 'linear-gradient(135deg, #64748b 0%, #475569 100%)',
-    imageUrl: '/image_api.png'
   }
 ];
 
@@ -110,7 +70,7 @@ export default function App() {
   const [menuOpen, setMenuOpen] = useState(false);
 
   // Typewriter effect state
-  const roles = ['Data Scientist', 'AI/ML Engineer', 'Python Developer'];
+  const roles = ['a Data Scientist', 'an AI/ML Engineer', 'a Python Developer', 'the Batman'];
   const [roleText, setRoleText] = useState('');
   const [roleIndex, setRoleIndex] = useState(0);
   const [charIndex, setCharIndex] = useState(0);
@@ -142,8 +102,8 @@ export default function App() {
 
     const timer = setTimeout(() => {
       setRoleText(
-        isDeleting 
-          ? currentRole.substring(0, charIndex - 1) 
+        isDeleting
+          ? currentRole.substring(0, charIndex - 1)
           : currentRole.substring(0, charIndex + 1)
       );
       setCharIndex((prev) => prev + (isDeleting ? -1 : 1));
@@ -193,20 +153,20 @@ export default function App() {
     });
   };
 
-  const filteredProjects = filter === 'All' 
-    ? PROJECTS_DATA 
+  const filteredProjects = filter === 'All'
+    ? PROJECTS_DATA
     : PROJECTS_DATA.filter(p => p.category === filter);
 
   return (
     <div className="portfolio-app">
       {/* ========== BACKGROUND SYSTEM ========== */}
       <div className="hero-bg">
-        <div 
-          className="hero-orb hero-orb-1" 
+        <div
+          className="hero-orb hero-orb-1"
           style={{ transform: `translateY(${scrollY * 0.15}px)` }}
         />
-        <div 
-          className="hero-orb hero-orb-2" 
+        <div
+          className="hero-orb hero-orb-2"
           style={{ transform: `translateY(${scrollY * -0.1}px)` }}
         />
         <div className="hero-grid" />
@@ -215,20 +175,13 @@ export default function App() {
       {/* ========== NAVIGATION ========== */}
       <nav className={`navbar ${scrolled ? 'scrolled' : ''} ${menuOpen ? 'menu-open' : ''}`}>
         <div className="nav-container">
-          <a href="#home" className="nav-logo" onClick={() => setMenuOpen(false)}>
-            <img 
-              src="https://media.base44.com/images/public/6a159434dd68851c45f57660/80088bdff_logo.png" 
-              alt="Batman Logo" 
-              className="batman-logo" 
-            />
-            <span>IZUSOL<span className="accent">.</span></span>
-          </a>
+
 
           <div className="nav-links">
             {['home', 'about', 'skills', 'projects', 'contact'].map((section) => (
-              <a 
+              <a
                 key={section}
-                href={`#${section}`} 
+                href={`#${section}`}
                 className={`nav-link ${activeSection === section ? 'active' : ''}`}
                 onClick={() => {
                   setActiveSection(section);
@@ -240,10 +193,10 @@ export default function App() {
             ))}
           </div>
 
-          <a 
-            href="https://github.com/izusol" 
-            target="_blank" 
-            rel="noopener noreferrer" 
+          <a
+            href="https://github.com/izusol"
+            target="_blank"
+            rel="noopener noreferrer"
             className="nav-cta"
           >
             <GithubIcon className="icon" size={15} />
@@ -251,8 +204,8 @@ export default function App() {
             <ExternalLink size={11} style={{ marginLeft: 2 }} />
           </a>
 
-          <button 
-            className="nav-toggle" 
+          <button
+            className="nav-toggle"
             onClick={() => setMenuOpen(!menuOpen)}
             aria-label="Toggle menu"
           >
@@ -264,59 +217,51 @@ export default function App() {
       {/* ========== HERO SECTION ========== */}
       <section id="home" className="hero">
         <div className="hero-content">
-          <motion.div 
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            className="hero-badge"
-          >
-            <span className="status-dot"></span>
-            Open to Work
-          </motion.div>
 
-          <motion.div 
+
+          <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.1 }}
             className="hero-avatar"
           >
-            <img 
-              src="https://avatars.githubusercontent.com/u/68485163?v=4" 
-              alt="Izu Asomba" 
-              className="avatar-img" 
+            <img
+              src="https://avatars.githubusercontent.com/u/68485163?v=4"
+              alt="Izuchukwu"
+              className="avatar-img"
             />
           </motion.div>
 
-          <motion.h1 
+          <motion.h1
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
             className="hero-title"
           >
-            Hi, I'm <span className="gradient-text">Izu Asomba</span>
+            Hi, I'm <span className="gradient-text">Izuchukwu. </span>
           </motion.h1>
 
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.6, delay: 0.3 }}
             className="hero-typewriter"
           >
-            <span className="typewriter-prefix">I'm a </span>
+            <span className="typewriter-prefix">I'm  </span>
             <span className="typewriter-text">{roleText}</span>
             <span className="typewriter-cursor">|</span>
           </motion.div>
 
-          <motion.p 
+          <motion.p
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.4 }}
             className="hero-description"
           >
-            Turning complex data into actionable insights and engineering intelligent, decentralized systems that solve real-world problems.
+            As a Data Scientist, I build models that help businesses make smarter decisions. I love the process of training algorithms—plus, computers are just easier to teach than people lol.
           </motion.p>
 
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.5 }}
@@ -331,14 +276,14 @@ export default function App() {
             </a>
           </motion.div>
 
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.6 }}
             className="hero-stats"
           >
             <div className="stat">
-              <span className="stat-number">3+</span>
+              <span className="stat-number">2+</span>
               <span className="stat-label">Years Experience</span>
             </div>
             <div className="stat-divider"></div>
@@ -348,18 +293,12 @@ export default function App() {
             </div>
             <div className="stat-divider"></div>
             <div className="stat">
-              <span className="stat-number">8+</span>
+              <span className="stat-number">3+</span>
               <span className="stat-label">Core Technologies</span>
             </div>
           </motion.div>
         </div>
 
-        <div className="scroll-indicator">
-          <div className="scroll-mouse">
-            <div className="scroll-wheel"></div>
-          </div>
-          <span>Scroll Down</span>
-        </div>
       </section>
 
       {/* ========== ABOUT SECTION ========== */}
@@ -367,9 +306,9 @@ export default function App() {
         <div className="container">
           <div className="section-label">About</div>
           <h2 className="section-title">A little about me</h2>
-          
+
           <div className="about-grid">
-            <motion.div 
+            <motion.div
               initial={{ opacity: 0, x: -20 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
@@ -377,13 +316,13 @@ export default function App() {
               className="about-text"
             >
               <p>
-                I'm a passionate <strong>Data Scientist</strong> and <strong>AI/ML Engineer</strong> based in Lagos, Nigeria. I specialize in transforming raw data into intelligent systems — from predictive models and NLP pipelines to robust statistical and analytical engines.
+                I am a <strong>Data Scientist</strong> specializing in <strong>AI and machine learning</strong>. I focus on building scalable solutions that drive measurable business value, transforming raw data into intelligent, revenue-generating systems.
               </p>
               <p>
-                With a strong foundation in Python, machine learning frameworks, and data analytics pipelines, I thrive on engineering solutions at the modern intersection of predictive modeling and enterprise data science.
+                With a strong foundation in Python and SQL, I have successfully deployed over 10 models into production. These models operate with 85-90% accuracy and have generated more than $2M in revenue impact.
               </p>
               <p>
-                When I'm not coding, you'll find me exploring the latest in artificial intelligence publications, optimizing data pipelines, and mentoring aspiring developers in the African tech ecosystem.
+                Beyond my core work, you will find me actively contributing to open-source projects to help advance the data science community.
               </p>
 
               <div className="about-highlights">
@@ -401,17 +340,11 @@ export default function App() {
                     <span className="highlight-value">AI/ML & Data Science</span>
                   </div>
                 </div>
-                <div className="highlight-item">
-                  <div className="highlight-icon">💼</div>
-                  <div>
-                    <span className="highlight-label">Status</span>
-                    <span className="highlight-value">Available for contracts & full-time roles</span>
-                  </div>
-                </div>
+
               </div>
             </motion.div>
 
-            <motion.div 
+            <motion.div
               initial={{ opacity: 0, x: 20 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
@@ -420,13 +353,13 @@ export default function App() {
             >
               <div className="card-glass">
                 <div className="batman-emblem">
-                  <img 
-                    src="https://media.base44.com/images/public/6a159434dd68851c45f57660/80088bdff_logo.png" 
-                    alt="Batman Emblem" 
-                    className="batman-card-logo" 
+                  <img
+                    src="public/favicon.svg"
+                    alt="Batman Emblem"
+                    className="batman-card-logo"
                   />
                 </div>
-                <div className="card-name">Izu Asomba</div>
+                <div className="card-name">Izuchukwu</div>
                 <div className="card-role">Data Scientist & AI/ML Engineer</div>
                 <div className="card-divider"></div>
                 <div className="card-details">
@@ -450,9 +383,9 @@ export default function App() {
         <div className="container">
           <div className="section-label">Skills</div>
           <h2 className="section-title">Technologies & tools I use</h2>
-          
+
           <div className="skills-grid">
-            <motion.div 
+            <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
@@ -470,7 +403,7 @@ export default function App() {
               </div>
             </motion.div>
 
-            <motion.div 
+            <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
@@ -488,7 +421,7 @@ export default function App() {
               </div>
             </motion.div>
 
-            <motion.div 
+            <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
@@ -544,9 +477,9 @@ export default function App() {
                   key={project.id}
                   className="project-card"
                 >
-                  <div 
-                    className="project-image" 
-                    style={{ 
+                  <div
+                    className="project-image"
+                    style={{
                       backgroundImage: project.imageUrl ? `url(${project.imageUrl})` : project.gradient,
                       backgroundSize: 'cover',
                       backgroundPosition: 'center'
@@ -567,10 +500,10 @@ export default function App() {
                     </div>
 
                     <div className="project-links">
-                      <a 
-                        href={project.codeUrl} 
-                        target="_blank" 
-                        rel="noopener noreferrer" 
+                      <a
+                        href={project.codeUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
                         className="project-link"
                       >
                         <GithubIcon size={15} />
@@ -591,7 +524,7 @@ export default function App() {
           <div className="section-label">Contact</div>
           <h2 className="section-title">Let's connect</h2>
           <p className="section-subtitle">
-            Open to data science roles, ML engineering contracts, Web3 collaborations, and tech conversations.
+            Open to data science roles, ML roles and tech conversations.
           </p>
 
           <div className="contact-email">
@@ -637,10 +570,7 @@ export default function App() {
             </a>
           </div>
 
-          <div className="availability-badge">
-            <span className="status-dot"></span>
-            <span>Open to Work — Seeking Data Science or ML/AI Roles</span>
-          </div>
+
         </div>
       </section>
 
@@ -648,7 +578,7 @@ export default function App() {
       <footer className="footer">
         <div className="container footer-content">
           <div className="footer-left">
-            © {new Date().getFullYear()} Izu Asomba. All rights reserved. Built with Vite, React & Framer Motion.
+            © {new Date().getFullYear()} Izuchukwu. All rights reserved. Built by Davidpraise.
           </div>
           <div className="footer-links">
             <a href="https://github.com/izusol" target="_blank" rel="noopener noreferrer">GitHub</a>
