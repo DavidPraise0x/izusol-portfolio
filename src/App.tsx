@@ -32,7 +32,7 @@ interface Project {
   id: number;
   title: string;
   desc: string;
-  category: 'AI / ML' | 'Data Science' | 'Web3 / Blockchain';
+  category: 'AI / ML & Data Science';
   stack: string[];
   codeUrl: string;
   demoUrl?: string;
@@ -45,79 +45,59 @@ const PROJECTS_DATA: Project[] = [
     id: 1,
     title: 'Sentiment Analysis Engine',
     desc: 'NLP-powered sentiment classification system using transformer models for real-time social media analysis and brand monitoring.',
-    category: 'AI / ML',
+    category: 'AI / ML & Data Science',
     stack: ['Python', 'PyTorch', 'HuggingFace', 'FastAPI'],
-    codeUrl: 'https://github.com/izusol/sentimental_analysis',
+    codeUrl: 'https://github.com/DavidPraise0x/Sentiment-Analysis-Engine',
     gradient: 'linear-gradient(135deg, #6366f1 0%, #a855f7 100%)',
     imageUrl: '/sentiment_analysis.png'
   },
   {
     id: 2,
-    title: 'Hfund Crowdfunding Platform',
-    desc: 'A cutting-edge Web3 crowdfunding platform built with decentralized smart contracts, hardhat testing suites, and a Next.js user interface.',
-    category: 'Web3 / Blockchain',
-    stack: ['Solidity', 'Next.js', 'Hardhat', 'Ethereum'],
-    codeUrl: 'https://github.com/izusol/Hfund',
-    gradient: 'linear-gradient(135deg, #3b82f6 0%, #2563eb 100%)',
-    imageUrl: '/web3_crowdfunding.png'
-  },
-  {
-    id: 3,
     title: 'Mental Health Chatbot',
     desc: 'An AI chatbot trained to provide emotional support resources and mental health guidance using Natural Language Processing (NLP).',
-    category: 'AI / ML',
+    category: 'AI / ML & Data Science',
     stack: ['Python', 'NLP', 'PyTorch', 'Jupyter'],
-    codeUrl: 'https://github.com/izusol/Mental_Health_Chatbot',
+    codeUrl: 'https://github.com/DavidPraise0x/Mental-Health-Chatbot',
     gradient: 'linear-gradient(135deg, #10b981 0%, #059669 100%)',
     imageUrl: '/mental_health_chatbot.png'
   },
   {
-    id: 4,
+    id: 3,
     title: 'Customer Churn Prediction',
     desc: 'Supervised machine learning model built to forecast customer churn in a telecommunications enterprise using analytical pipelines and models.',
-    category: 'Data Science',
+    category: 'AI / ML & Data Science',
     stack: ['Python', 'Scikit-learn', 'Pandas', 'Jupyter'],
-    codeUrl: 'https://github.com/izusol/Customer_Churn_Prediction',
+    codeUrl: 'https://github.com/DavidPraise0x/Customer-Churn-Prediction',
     gradient: 'linear-gradient(135deg, #f59e0b 0%, #d97706 100%)',
     imageUrl: '/data_analytics.png'
   },
   {
-    id: 5,
+    id: 4,
     title: 'House Price Prediction App',
     desc: 'An interactive analytical dashboard engineered with Streamlit and Scikit-learn for mapping and predicting real estate valuations.',
-    category: 'Data Science',
+    category: 'AI / ML & Data Science',
     stack: ['Python', 'Streamlit', 'Scikit-learn', 'Plotly'],
-    codeUrl: 'https://github.com/izusol/House_Price_Prediction_App',
+    codeUrl: 'https://github.com/DavidPraise0x/House-Price-Prediction-App',
     gradient: 'linear-gradient(135deg, #ec4899 0%, #db2777 100%)',
     imageUrl: '/house_prediction.png'
   },
   {
-    id: 6,
-    title: 'Sapa-Fund Decentralized Charity',
-    desc: 'A decentralized charity and transparent fundraising portal backed by solidity smart contracts to secure funds peer-to-peer.',
-    category: 'Web3 / Blockchain',
-    stack: ['Solidity', 'Smart Contracts', 'Web3.js', 'React'],
-    codeUrl: 'https://github.com/izusol/Sapa-Fund',
-    gradient: 'linear-gradient(135deg, #8b5cf6 0%, #7c3aed 100%)',
-    imageUrl: '/sapa_fund.png'
-  },
-  {
-    id: 7,
+    id: 5,
     title: 'SMS Spam Detection Model',
     desc: 'A robust text categorization machine learning model built using Natural Language Processing (NLP) to detect and isolate spam.',
-    category: 'AI / ML',
+    category: 'AI / ML & Data Science',
     stack: ['Python', 'NLP', 'Scikit-learn', 'NLTK'],
-    codeUrl: 'https://github.com/izusol/SMS_Spam_Detection_Model',
+    codeUrl: 'https://github.com/DavidPraise0x/SMS-Spam-Detection-Model',
     gradient: 'linear-gradient(135deg, #06b6d4 0%, #0891b2 100%)',
     imageUrl: '/sms_spam.png'
   },
   {
-    id: 8,
+    id: 6,
     title: 'Image Classification API',
-    desc: 'Deep learning classification API driven by custom CNN models, packaged in Docker container containers and hosted on AWS infrastructure.',
-    category: 'AI / ML',
-    stack: ['TensorFlow', 'Flask', 'Docker', 'AWS'],
-    codeUrl: 'https://github.com/izusol',
+    desc: 'Deep learning classification API driven by custom CNN models, packaged in Docker containers and hosted on AWS infrastructure.',
+    category: 'AI / ML & Data Science',
+    stack: ['Python', 'TensorFlow', 'Flask', 'Docker', 'AWS'],
+    codeUrl: 'https://github.com/DavidPraise0x/Image-Classification-API',
     gradient: 'linear-gradient(135deg, #64748b 0%, #475569 100%)',
     imageUrl: '/image_api.png'
   }
@@ -137,7 +117,7 @@ export default function App() {
   const [isDeleting, setIsDeleting] = useState(false);
 
   // Project filtering state
-  const [filter, setFilter] = useState<'All' | 'AI / ML' | 'Data Science' | 'Web3 / Blockchain'>('All');
+  const [filter, setFilter] = useState<'All' | 'AI / ML & Data Science'>('All');
 
   // Copy Email state
   const [copied, setCopied] = useState(false);
@@ -397,13 +377,13 @@ export default function App() {
               className="about-text"
             >
               <p>
-                I'm a passionate <strong>Data Scientist</strong> and <strong>AI/ML Engineer</strong> based in Lagos, Nigeria. I specialize in transforming raw data into intelligent systems — from predictive models and NLP pipelines to decentralized dApps and intelligent full-stack engines.
+                I'm a passionate <strong>Data Scientist</strong> and <strong>AI/ML Engineer</strong> based in Lagos, Nigeria. I specialize in transforming raw data into intelligent systems — from predictive models and NLP pipelines to robust statistical and analytical engines.
               </p>
               <p>
-                With a strong foundation in Python, machine learning frameworks, data engineering, and decentralized protocols, I thrive on engineering solutions at the modern intersection of AI and Web3 technologies.
+                With a strong foundation in Python, machine learning frameworks, and data analytics pipelines, I thrive on engineering solutions at the modern intersection of predictive modeling and enterprise data science.
               </p>
               <p>
-                When I'm not coding, you'll find me exploring the latest in artificial intelligence publications, designing decentralized smart contracts, and mentoring aspiring developers in the African tech ecosystem.
+                When I'm not coding, you'll find me exploring the latest in artificial intelligence publications, optimizing data pipelines, and mentoring aspiring developers in the African tech ecosystem.
               </p>
 
               <div className="about-highlights">
@@ -418,7 +398,7 @@ export default function App() {
                   <div className="highlight-icon">🎓</div>
                   <div>
                     <span className="highlight-label">Focus</span>
-                    <span className="highlight-value">AI/ML, Data Science & Web3</span>
+                    <span className="highlight-value">AI/ML & Data Science</span>
                   </div>
                 </div>
                 <div className="highlight-item">
@@ -484,7 +464,7 @@ export default function App() {
                 Languages
               </h3>
               <div className="skill-tags">
-                {['Python', 'Solidity', 'SQL', 'JavaScript', 'TypeScript', 'R'].map(s => (
+                {['Python', 'R'].map(s => (
                   <span key={s} className="skill-tag">{s}</span>
                 ))}
               </div>
@@ -520,7 +500,7 @@ export default function App() {
                 Data & Cloud
               </h3>
               <div className="skill-tags">
-                {['Pandas', 'NumPy', 'FastAPI', 'Flask', 'PostgreSQL', 'Docker', 'AWS', 'Hardhat'].map(s => (
+                {['AWS', 'Pandas', 'NumPy'].map(s => (
                   <span key={s} className="skill-tag">{s}</span>
                 ))}
               </div>
@@ -535,12 +515,12 @@ export default function App() {
           <div className="section-label">Projects</div>
           <h2 className="section-title">Featured work</h2>
           <p className="section-subtitle">
-            A showcasing of ML architectures, data analytics applications, and Web3 smart contract deployments.
+            A showcasing of ML architectures, data pipelines, and predictive analytics applications.
           </p>
 
           {/* Filter tabs */}
           <div className="projects-filters">
-            {(['All', 'AI / ML', 'Data Science', 'Web3 / Blockchain'] as const).map((cat) => (
+            {(['All', 'AI / ML & Data Science'] as const).map((cat) => (
               <button
                 key={cat}
                 className={`filter-tab ${filter === cat ? 'active' : ''}`}
